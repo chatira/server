@@ -18,7 +18,9 @@ class User extends BaseModel {
    */
   static get schema () {
     return {
-      
+      username: { type: String, unique: true, require: true },
+      email: { type: String, unique: true, require: true },
+      password: { type: String, required: true }
     }
   }
 }
