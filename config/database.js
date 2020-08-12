@@ -77,5 +77,30 @@ module.exports = {
       password: Env.get('DB_PASSWORD', ''),
       database: Env.get('DB_DATABASE', 'adonis')
     }
-  }
+  },
+
+  /*
+  |--------------------------------------------------------------------------
+  | MongoDB
+  |--------------------------------------------------------------------------
+  |
+  | Here we define connection settings for MongoDB database.
+  |
+  */
+  mongodb: {
+    connectionString: Env.get('MONGO_CONNECTION_STRING', null),
+    connection: {
+      host: Env.get('MONGO_HOST', 'localhost'),
+      port: Env.get('MONGO_PORT', 27017),
+      user: Env.get('MONGO_USER', 'admin'),
+      pass: Env.get('MONGO_PASSWORD', ''),
+      database: Env.get('MONGO_DATABASE', 'Chatira'),
+      options: {
+        // All options can be found at http://mongoosejs.com/docs/connections.html
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      },
+      debug: false
+    }
+  },
 }
