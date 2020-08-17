@@ -1,12 +1,12 @@
-'use strict'
+"use strict";
 
-const BaseModel = use('MongooseModel')
+const BaseModel = use("MongooseModel");
 
 /**
  * @class User
  */
 class User extends BaseModel {
-  static boot ({ schema }) {
+  static boot({ schema }) {
     // Hooks:
     // this.addHook('preSave', () => {})
     // this.addHook('preSave', 'UserHook.method')
@@ -16,13 +16,13 @@ class User extends BaseModel {
   /**
    * User's schema
    */
-  static get schema () {
+  static get schema() {
     return {
       username: { type: String, unique: true, require: true },
       email: { type: String, unique: true, require: true },
-      password: { type: String, required: true }
-    }
+      password: { type: String, required: true },
+    };
   }
 }
 
-module.exports = User.buildModel('User')
+module.exports = User.buildModel("User");
