@@ -18,4 +18,5 @@ const Route = use('Route')
 
 Route.on('/').render('welcome');
 Route.post('api/signup', 'UserController.signup');
-Route.post('api/login', 'UserController.login');
+Route.post('api/login', 'UserController.login');Route.post("api/signup", "UserController.signup");
+Route.post("api/login", "UserController.login");
