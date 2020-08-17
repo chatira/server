@@ -1,7 +1,7 @@
-'use strict'
+"use strict";
 
 /** @type {import('@adonisjs/framework/src/Env')} */
-const Env = use('Env')
+const Env = use("Env");
 
 module.exports = {
   /*
@@ -16,7 +16,7 @@ module.exports = {
   | Available Serializers - lucid, database
   |
   */
-  authenticator: 'session',
+  authenticator: "jwt",
 
   /*
   |--------------------------------------------------------------------------
@@ -28,11 +28,11 @@ module.exports = {
   |
   */
   session: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
-    scheme: 'session',
-    uid: 'email',
-    password: 'password'
+    serializer: "lucid",
+    model: "App/Models/User",
+    scheme: "session",
+    uid: "email",
+    password: "password",
   },
 
   /*
@@ -49,11 +49,11 @@ module.exports = {
   |
   */
   basic: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
-    scheme: 'basic',
-    uid: 'email',
-    password: 'password'
+    serializer: "lucid",
+    model: "App/Models/User",
+    scheme: "basic",
+    uid: "email",
+    password: "password",
   },
 
   /*
@@ -66,14 +66,14 @@ module.exports = {
   |
   */
   jwt: {
-    serializer: 'lucid',
-    model: 'App/Models/User',
-    scheme: 'jwt',
-    uid: 'email',
-    password: 'password',
+    serializer: "mongoose",
+    model: "App/Models/User",
+    scheme: "jwt",
+    uid: "email",
+    password: "password",
     options: {
-      secret: Env.get('APP_KEY')
-    }
+      secret: Env.get("APP_KEY"),
+    },
   },
 
   /*
@@ -85,11 +85,11 @@ module.exports = {
   |
   */
   api: {
-    serializer: 'mongoose',
-    scheme: 'api',
-    model: 'App/Models/User',
-    token: 'App/Models/Token',
-    uid: 'username', // The user identifier. Ej: email, username
-    password: 'password', // Password field if using user-password validation
+    serializer: "mongoose",
+    scheme: "api",
+    model: "App/Models/User",
+    token: "App/Models/Token",
+    uid: "username", // The user identifier. Ej: email, username
+    password: "password", // Password field if using user-password validation
   },
-}
+};
